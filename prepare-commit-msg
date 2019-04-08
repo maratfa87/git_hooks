@@ -9,7 +9,7 @@ COMMIT_MSG=$(head -n 1 $1)
 
 if [ -n "$BRANCH_NAME" ] &&
     [ "$BRANCH_NAME" != "master" ] &&
-    [ "$BRANCH_NAME" != "dev" ] &&
+    [ "$BRANCH_NAME" != "develop" ] &&
     [[ ${COMMIT_MSG} != ${BRANCH_NAME}* ]] &&
     [[ ${COMMIT_MSG} != "Revert \"${BRANCH_NAME}: "* ]];
 then
