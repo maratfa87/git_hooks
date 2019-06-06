@@ -2,8 +2,8 @@
 #
 # Automatically checks for dumps
 
-VAR=$(git diff --cached | grep -wiE "var_dump|dump|die")
+VAR=$(git diff --cached | grep -wiE "var_dump|dump|die|dd")
 if [ ! -z "$VAR" ]; then
-  echo "You've left a var_dump() or dump() in one of your files. Aborting commit..."
+  echo "You've left a var_dump(), dump(), dd(), or die() in one of your files. Aborting commit..."
   exit 1
 fi
