@@ -11,7 +11,7 @@ if [ -n "$BRANCH_NAME" ] &&
     [ "$BRANCH_NAME" != "master" ] &&
     [ "$BRANCH_NAME" != "develop" ] &&
     [[ ${COMMIT_MSG} != ${BRANCH_NAME}* ]] &&
-    [[ ${COMMIT_MSG} != "Revert \"${BRANCH_NAME}: "* ]];
+    [[ ${COMMIT_MSG} != "Revert \"${BRANCH_NAME} "* ]];
 then
-    sed -i.bak -e "1s/^/$BRANCH_NAME: /" $1
+    sed -i.bak -e "1s/^/$BRANCH_NAME /" $1
 fi
